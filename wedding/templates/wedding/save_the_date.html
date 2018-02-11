@@ -1,0 +1,51 @@
+{% extends "wedding/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<!-- Save the Date -->
+<div class="text-center" style="background-color:#316B52">
+    <img src="/static/images/save_the_date.jpeg" class="img-fluid" alt="Responsive image">
+</div>
+
+<!-- Hotel info -->
+
+<section id="Where to Stay">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-center">Where to Stay</h2>
+                <hr class="primary">
+                <h3>Hotels</h3>
+                <p>
+                    There are plenty of choices when staying in Las Vegas and we know you will have a good time wherever you choose.
+                    Here are a few reccomendations that are  either close to the venue or affordable.
+                </p>
+
+                <hr class="primary">
+
+                <table class="table table-hover">
+                    <tbody>
+                        {% for hotel in hotels %}
+                            <tr>
+                                <th scope="row"><a href= {{ hotel.website }}>{{ hotel.name }}</a></th>
+                                <td>{{ hotel.phone }}</td>
+                                <td>{{ hotel.description}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- What to do in LV -->
+
+
+<!--Registry info -->
+
+
+{% endblock %}
+

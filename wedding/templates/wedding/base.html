@@ -1,0 +1,51 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <title> 🍺 Lauren and Michael 🍺</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body style="padding-top:56px">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Lauren and Michael</a>
+        <a class="navbar-brang" href="Save the Date">Save the Date</a>
+        <a class="nav-link" href="#Where to Stay">Where to Stay</a>
+        <a class="nav-link" href='http://www.google.com'>Registry</a>
+        <a class="nav-link" href="#Contact">Contact</a>
+    </nav>
+
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <span class="anchor" id="SavetheDate"></span>
+
+
+        {% block content %}
+        {% endblock %}
+
+        <section class="bg-info "  id="Contact">
+            <section id="contact" class="bg-light">
+                <div class="container">
+                    <div class="text-center">
+                        <h2 class="section-heading">Contact us!</h2>
+                        <hr class="primary">
+                        <p>If you have any questions don't hesitate to reach out!</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                        <p><a href="mailto:hello@SteinerPappert.com">hello@SteinerPappert.com</a></p>
+                    </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
