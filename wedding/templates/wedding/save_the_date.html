@@ -1,17 +1,19 @@
 {% extends "wedding/base.html" %}
 {% load staticfiles %}
-
+{$ from random import randint %]
 {% block content %}
 
 <!-- Save the Date -->
-<div class="text-center" style="background-color:#316B52">
-    <img src="/static/images/save_the_date.jpeg" class="img-fluid" alt="Responsive image">
-</div>
+<section id="Save the Date">
+    <div class="text-center" style="background-color:#316B52">
+        <img src="/static/images/save_the_date.jpeg" class="img-fluid" alt="Responsive image">
+    </div>
+</section>
 
 <!-- Hotel info -->
 
 <section id="Where to Stay">
-    <div class="container">
+    <div class="container bg-white">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="section-heading text-center">Where to Stay</h2>
@@ -21,8 +23,6 @@
                     There are plenty of choices when staying in Las Vegas and we know you will have a good time wherever you choose.
                     Here are a few reccomendations that are  either close to the venue or affordable.
                 </p>
-
-                <hr class="primary">
 
                 <table class="table table-hover">
                     <tbody>
@@ -35,7 +35,6 @@
                         {% endfor %}
                     </tbody>
                 </table>
-                <hr class="primary">
             </div>
         </div>
     </div>
@@ -45,7 +44,64 @@
 
 
 <!--Registry info -->
+<section class="no-padding bg-white" id="Registry">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-center">Registry</h2>
+                <hr class="primary">
+                <p>
+                    Your presence at our wedding is the greatest gift of all.
+                    However, if you wish to honor us with a gift, we have created a monetary registry in lieu of gift for three things: honeymoon, home improvements, and charity.
+                </p>
+<!-- Links to Registry -->
 
+    <div class="container-fluid " style="height:50%">
+        <div class="row no-gutter">
+            <!-- Honeymoon section -->
+            <div class="col-sm">
+                <a href="https://www.theknot.com/registry/checkout/24330777/37a9d38c-741e-4ee8-954e-1c0acd9ef4c2?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
+                    <img src="/static/images/honeymoon/honeymoon.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                        Honeymoon
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Home Improvements section -->
+            <div class="col-sm">
+                <a href="https://www.theknot.com/registry/checkout/24330777/18cd395c-7fdb-482b-b47f-e453e43b55f9?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
+                    <img src="/static/images/projects/projects.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                        Home Improvements
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Charity section -->
+            <div class="col-sm">
+            <a href="https://www.theknot.com/registry/checkout/24330777/5666ac53-c650-4bd6-b061-9b170bf686ef?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
+                <img src="/static/images/charity/charity.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
+                <div class="portfolio-box-caption">
+                    <div class="portfolio-box-caption-content">
+                        <div class="project-name">
+                            Charity
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
 
