@@ -1,6 +1,5 @@
 {% extends "wedding/base.html" %}
 {% load staticfiles %}
-{$ from random import randint %]
 {% block content %}
 
 <!-- Save the Date -->
@@ -28,8 +27,8 @@
                     <tbody>
                         {% for hotel in hotels %}
                             <tr>
-                                <th scope="row"><a href= {{ hotel.website }}>{{ hotel.name }}</a></th>
-                                <td>{{ hotel.phone }}</td>
+                                <th scope="row-sm-1" width="25%"><a href= {{ hotel.website }}>{{ hotel.name }}</a></th>
+                                <td width="12%">({{ hotel.phone|slice:"1:4" }}) {{ hotel.phone|slice:"4:7" }}-{{ hotel.phone|slice:"7:" }}</td>
                                 <td>{{ hotel.description}}</td>
                             </tr>
                         {% endfor %}
@@ -52,53 +51,33 @@
                 <hr class="primary">
                 <p>
                     Your presence at our wedding is the greatest gift of all.
-                    However, if you wish to honor us with a gift, we have created a monetary registry in lieu of gift for three things: honeymoon, home improvements, and charity.
+                    However, if you wish to honor us with a gift, we have set up three funds through theknot.com to which you can donate in lieu of a traditional gift.
                 </p>
+
+                {% for fund in funds %}
+                <p><a href={{ fund.link }}>The {{ fund.name }} Fund</a> {{fund.info|safe}}</p>
+                {% endfor %}
+
 <!-- Links to Registry -->
 
     <div class="container-fluid " style="height:50%">
         <div class="row no-gutter">
-            <!-- Honeymoon section -->
+
+            {% for fund in funds %}
+            <!-- {{ fund.name }} -->
             <div class="col-sm">
-                <a href="https://www.theknot.com/registry/checkout/24330777/37a9d38c-741e-4ee8-954e-1c0acd9ef4c2?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
-                    <img src="/static/images/honeymoon/honeymoon.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
+                <a href= {{ fund.link }} class="portfolio-box page-scroll">
+                    <img src= {{ fund.image_source }} class="img-responsive" alt="" style="width:100%; height:100%">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-name">
-                                        Honeymoon
+                                        {{ fund.name }}
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-
-            <!-- Home Improvements section -->
-            <div class="col-sm">
-                <a href="https://www.theknot.com/registry/checkout/24330777/18cd395c-7fdb-482b-b47f-e453e43b55f9?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
-                    <img src="/static/images/projects/projects.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-name">
-                                        Home Improvements
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Charity section -->
-            <div class="col-sm">
-            <a href="https://www.theknot.com/registry/checkout/24330777/5666ac53-c650-4bd6-b061-9b170bf686ef?redirect=https%3A%2F%2Fwww.theknot.com%2Fus%2Flauren-pappert-and-michael-steiner-nov-2018-18158054-21cc-4314-9905-70f51208de35%2Fregistry" class="portfolio-box page-scroll">
-                <img src="/static/images/charity/charity.jpeg" class="img-responsive" alt="" style="width:100%; height:100%">
-                <div class="portfolio-box-caption">
-                    <div class="portfolio-box-caption-content">
-                        <div class="project-name">
-                            Charity
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
+            {% endfor %}
         </div>
     </div>
 </section>
