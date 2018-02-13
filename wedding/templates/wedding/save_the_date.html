@@ -60,14 +60,16 @@
 
 <!-- Links to Registry -->
 
-    <div class="container-fluid " style="height:50%">
+    <div class="container-fluid-max-width:100%">
         <div class="row no-gutter">
 
             {% for fund in funds %}
             <!-- {{ fund.name }} -->
             <div class="col-sm">
                 <a href= {{ fund.link }} class="portfolio-box page-scroll">
-                    <img src= {{ fund.image_source }} class="img-responsive" alt="" style="width:100%; height:100%">
+                    <div class="image">
+                        <img src= {{ fund.image_source }} class="img-responsive" alt="" style="width:100%; height:auto">
+                    </div>
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-name">
