@@ -1,8 +1,8 @@
-from django.urls import path
-
+from django.urls import path, re_path
 from . import views
 
 urlpatterns = [
-    path('', views.home, name = 'home'),
-    path('registery/', views.registery, name = 'registery'),
+    re_path(r'^$', views.home, name = 'home'),
+    re_path(r'^what-to-do$', views.what_to_do, name = 'what-to-do'),
+    re_path(r'(?P<category>[A-z]*)/$', views.what_to_do_detail, name = 'what-to-do/category')
 ]

@@ -10,19 +10,10 @@
 <body style="padding-top:56px">
 
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="#">Lauren and Michael</a>
-        <a class="navbar-link" href="#">Save the Date</a>
-        <a class="nav-link" href="#Event">Event</a>
-        <a class="nav-link" href="#Where to Stay">Where to Stay</a>
-        <a class="nav-link" href="#Registry">Registry</a>
-        <a class="nav-link" href="#Contact">Contact</a>
-    </nav>
+    {% block navbar %}
+    {% endblock %}
 
-    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-        <span class="anchor" id="SavetheDate"></span>
-
-
+    <!-- Content -->
         {% block content %}
         {% endblock %}
 
