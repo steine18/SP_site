@@ -26,16 +26,16 @@ class Fund(models.Model):
         return self.name
 
 
-class ToDo(models.Model):
+class FunStuff(models.Model):
     name = models.CharField(max_length=120)
-    CATEGORIES = [
+    _CATEGORIES = [
         ("Entertainment", "Entertainment"),
         ("Food", "Food"),
         ("Outdoors", "Outdoors")
     ]
     category = models.CharField(
         max_length=13,
-        choices=CATEGORIES,
+        choices=_CATEGORIES,
         default="Entertainment",
     )
     link = models.CharField(max_length=400)
