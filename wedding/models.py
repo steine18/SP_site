@@ -6,7 +6,7 @@ class Hotel(models.Model):
     name = models.CharField(max_length=120)
     website = models.CharField(max_length=220)
     address = models.CharField(max_length=120)
-    city = models.CharField(max_length=64, default = "Las Vegas")
+    city = models.CharField(max_length=64, default="Las Vegas")
     state = models.CharField(max_length=2, default="NV")
     zip_code = models.CharField(max_length=5)
     phone = models.CharField(max_length=12)
@@ -15,6 +15,7 @@ class Hotel(models.Model):
     def __str__(self):
         return self.name
 
+
 class Fund(models.Model):
     name = models.CharField(max_length=120)
     link = models.CharField(max_length=400)
@@ -22,4 +23,24 @@ class Fund(models.Model):
     image_source = models.CharField(max_length=120)
 
     def __str__(self):
-        return  self.name
+        return self.name
+
+
+class FunStuff(models.Model):
+    name = models.CharField(max_length=120)
+    _CATEGORIES = [
+        ("Entertainment", "Entertainment"),
+        ("Food", "Food"),
+        ("Outdoors", "Outdoors")
+    ]
+    category = models.CharField(
+        max_length=13,
+        choices=_CATEGORIES,
+        default="Entertainment",
+    )
+    link = models.CharField(max_length=400)
+    image_source = models.CharField(max_length=120)
+    info = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name

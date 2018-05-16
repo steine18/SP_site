@@ -1,5 +1,19 @@
 {% extends "wedding/base.html" %}
 {% load staticfiles %}
+
+{% block navbar %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#">Lauren and Michael</a>
+        <a class="nav-link" href="#Event">Event</a>
+        <a class="nav-link" href="#Registry">Registry</a>
+        <a class="nav-link" href="/im-not-a-local">Travel</a>
+        <a class="nav-link" href="#Contact">Contact</a>
+    </nav>
+
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <span class="anchor" id="SavetheDate"></span>
+{% endblock %}
+
 {% block content %}
 
 <!-- Save the Date -->
@@ -19,53 +33,28 @@
             <dl class="dl-row text-center lead">
                 <dt>What</dt>
                 <dd>
-                    We're getting married!!! </br>
-                    Join us for a ceremony immediately followed by dinner, drinks, and fun.
+                    Join us for a ceremony immediately followed by dinner, drinks, and fun!
                 <dt>When</dt>
                 <dd>Saturday, November 3, 2018 at 5:30pm</dd>
                 <dt>Where</dt>
                 <dd>
                     <address>
-                        <a href="http://www.hofbrauhauslasvegas.com">Hofbrauhaus Las Vegas</a><br>
-                        <a href="https://goo.gl/maps/67GnyNPQjhs">24510 Paradise Rd, Las Vegas, NV 89169</a>
+                        Hofbrauhaus Las Vegas<br>
+                        <a href="https://goo.gl/maps/67GnyNPQjhs">24510 Paradise Rd, Las Vegas, NV 89169</a><br>
                     </address>
                 </dd>
+                <dd><a href="/im-not-a-local">Check out our recommendations for guests visiting from out of town.</a></dd>
+                </dl>
                 <dd></dd>
             </dl>
         </div>
     </div>
 </div>
 
-<!-- Hotel info -->
 
-<section id="Where to Stay">
-    <div class="container bg-white">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="section-heading text-center">Where to Stay</h2>
-                <hr class="primary">
-                <p>
-                    There are plenty of choices when staying in Las Vegas and we know you will have a good time wherever you choose.
-                    Here are a few recommendations that are  near the venue.
-                </p>
 
-                <table class="table table-hover">
-                    <tbody>
-                        {% for hotel in hotels %}
-                            <tr>
-                                <th scope="row-sm-1" width="25%"><a href= {{ hotel.website }}>{{ hotel.name }}</a></th>
-                                <td width="12%">({{ hotel.phone|slice:"1:4" }}) {{ hotel.phone|slice:"4:7" }}-{{ hotel.phone|slice:"7:" }}</td>
-                                <td>{{ hotel.description}}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- What to do in LV -->
+
 
 
 <!--Registry info -->

@@ -1,0 +1,106 @@
+{% extends "wedding/base.html" %}
+{% load staticfiles %}
+
+{% block navbar %}
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="/">Lauren and Michael</a>
+        <a class="navbar-link" href="/">Event</a>
+        <a class="nav-link" href="#Where to Stay">Where to Stay</a>
+        <a class="nav-link" href="#What to Do">What to Do</a>
+        <a class="nav-link" href="#Contact">Contact</a>
+    </nav>
+
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <span class="anchor" id="SavetheDate"></span>
+{% endblock %}
+
+{% block content %}
+<section id="Welcome to Las Vegas">
+    <div></div>
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-center">
+                    <img src="/static/images/lvsign.png" class="img-fluid" alt="Responsive image">
+                </div>
+                <hr class="primary">
+                <p>
+                    We are so happy that you are planning on coming to our Las Vegas Wedding!
+                    Whether it was a short drive or a long flight, we appreciate that you are coming to celebrate with us!
+                    We made this page to help you plan your visit. Below are some hotel recomendations near the wedding venue and bunch of our favorite places in Las Vegas.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hotel info -->
+<section id="Where to Stay">
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-center">Where to Stay</h2>
+                <hr class="primary">
+                <h3>Hotels</h3>
+                <p>
+                    There are plenty of choices when staying in Las Vegas and we know you will have a good time wherever you choose.
+                    Here are a few reccomendations that are  either close to the venue or affordable.
+                </p>
+
+                <table class="table table-hover">
+                    <tbody>
+                        {% for hotel in hotels %}
+                            <tr>
+                                <th scope="row-sm-1" width="25%"><a href= {{ hotel.website }}>{{ hotel.name }}</a></th>
+                                <td width="12%">({{ hotel.phone|slice:"1:4" }}) {{ hotel.phone|slice:"4:7" }}-{{ hotel.phone|slice:"7:" }}</td>
+                                <td>{{ hotel.description}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- What to do in LV -->
+{% if fun_stuff %}}
+<section id="What to Do">
+    <div></div>
+    <div class="container bg-white">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="section-heading text-center">What to Do</h2>
+                <hr class="primary">
+                <p>
+                    We have lived in Las Vegas for 10 years and have accumulated a lot of favorite places.
+                    Since we can't take all our guests on a tour of the city, we've listed a few so they can explore on their own.
+                    Many of these are off the strip and not a typical tourist destination.
+                    We hope you get a chance to check them out because we know you will enjoy them as much as we do.
+
+                </p>
+            {% for key, value in fun_stuff.items %}
+                <h3>{{key}}</h3>
+            <div class="container-fluid bg-white" align = "center">
+            <!-- Three columns of text below the carousel -->
+                <div class="row">
+                {% for thing in value %}
+                  <div class="col-lg-4">
+                    <img class="rounded-circle" src={{thing.image_source}} alt={{thing.name}} width="140" height="140">
+                    <h3>{{thing.name}}</h3>
+                      <p>{{thing.info}}</p>
+                      <p><a class="btn btn-primary"  color = #306c51 href={{thing.link}} role="button">Website</a></p>
+                  </div><!-- /.col-lg-4 -->
+                {% if forloop.counter|divisibleby:3 %}
+                </div><!-- /.row -->
+                <div class="row">
+                {% endif %}
+                {% endfor %}
+                </div><!-- /.row -->
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
