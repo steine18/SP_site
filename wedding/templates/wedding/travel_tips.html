@@ -4,6 +4,7 @@
 {% block navbar %}
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="/">Lauren and Michael</a>
+        <a class="navbar-link" href="/">Event</a>
         <a class="nav-link" href="#Where to Stay">Where to Stay</a>
         <a class="nav-link" href="#What to Do">What to Do</a>
         <a class="nav-link" href="#Contact">Contact</a>
@@ -19,11 +20,13 @@
     <div class="container bg-white">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="section-heading text-center">Welcome to Las Vegas</h2>
+                <div class="text-center">
+                    <img src="/static/images/lvsign.png" class="img-fluid" alt="Responsive image">
+                </div>
                 <hr class="primary">
                 <p>
                     We are so happy that you are planning on coming to our Las Vegas Wedding!
-                    Wether it was a short drive or a long flight, we appreciate that you are coming to celebrate with us!
+                    Whether it was a short drive or a long flight, we appreciate that you are coming to celebrate with us!
                     We made this page to help you plan your visit. Below are some hotel recomendations near the wedding venue and bunch of our favorite places in Las Vegas.
                 </p>
             </div>
@@ -84,8 +87,8 @@
                   <div class="col-lg-4">
                     <img class="rounded-circle" src={{thing.image_source}} alt={{thing.name}} width="140" height="140">
                     <h3>{{thing.name}}</h3>
-                    <p>{{thing.info}} {{forloop.counter}}</p>
-                    <p><button type="button" class="btn btn-secondary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Details</button></p>
+                      <p>{{thing.info}}</p>
+                      <p><a class="btn btn-primary"  color = #306c51 href={{thing.link}} role="button">Website</a></p>
                   </div><!-- /.col-lg-4 -->
                 {% if forloop.counter|divisibleby:3 %}
                 </div><!-- /.row -->
