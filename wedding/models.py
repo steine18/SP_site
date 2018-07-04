@@ -75,7 +75,7 @@ class Quote(models.Model):
     approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return f'{self.place.name} - {self.user}'
+        return self.place.name
 
 
 
