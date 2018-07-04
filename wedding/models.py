@@ -1,4 +1,7 @@
 from django.db import models
+from django.contrib.auth.models import User
+import string
+import random
 
 
 # Create your models here.
@@ -31,6 +34,7 @@ class FunStuff(models.Model):
     _CATEGORIES = [
         ("Entertainment", "Entertainment"),
         ("Food", "Food"),
+        ('Drinks', "Drinks"),
         ("Outdoors", "Outdoors")
     ]
     category = models.CharField(
@@ -39,8 +43,39 @@ class FunStuff(models.Model):
         default="Entertainment",
     )
     link = models.CharField(max_length=400)
-    image_source = models.CharField(max_length=120)
+    image_source = models.CharField(max_length=240)
     info = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "Fun Stuff"
+
+
+class Local(models.Model):
+    def getCode(size=24, chars=string.ascii_uppercase + string.ascii_lowercase + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size))
+
+    name = models.CharField(max_length=120)
+    relation = models.CharField(max_length=120)
+    number = models.CharField(max_length=36,default=getCode, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "Locals"
+
+
+class Quote(models.Model):
+    place = models.ForeignKey(FunStuff, on_delete=models.CASCADE)
+    quote = models.CharField(max_length=120)
+    user = models.ForeignKey(Local, on_delete=models.CASCADE)
+    approved = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f'{self.place.name} - {self.user}'
+
+
+

@@ -1,9 +1,10 @@
-from django.urls import path, re_path
+from django.urls import re_path, path
 from . import views
 
 urlpatterns = [
-    re_path(r'^$', views.home, name = 'home'),
-    re_path(r'^im-not-a-local/$', views.what_to_do, name = 'travel'),
-    re_path(r'^what-to-do$', views.what_to_do, name = 'what-to-do'),
-    re_path(r'(?P<category>[A-z]*)/$', views.what_to_do_detail, name = 'what-to-do/category')
+    re_path(r'^$', views.home, name='home'),
+    re_path(r'^M1ggy0n1x/$', views.home2, name='home'),
+    re_path(r'^im-not-a-local/$', views.what_to_do, name='travel'),
+    path('form/<str:number>/', views.quote, name='quote'),
+    re_path(r'^approval/$', views.approve, name='approve'),
 ]

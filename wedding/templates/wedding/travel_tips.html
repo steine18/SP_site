@@ -86,8 +86,14 @@
                 {% for thing in value %}
                   <div class="col-lg-4">
                     <img class="rounded-circle" src={{thing.image_source}} alt={{thing.name}} width="140" height="140">
-                    <h3>{{thing.name}}</h3>
+                    <h4>{{thing.name}}</h4>
                       <p>{{thing.info}}</p>
+                      {% for key2, value2 in quotes.items %}
+                      {% if key2 == thing.name %}
+                      <p>"{{value2.quote}}"</p>
+                      <p>- {{value2.user}} ({{value2.user.relation}})</p>
+                      {% endif %}
+                      {% endfor %}
                       <p><a class="btn btn-primary"  color = #306c51 href={{thing.link}} role="button">Website</a></p>
                   </div><!-- /.col-lg-4 -->
                 {% if forloop.counter|divisibleby:3 %}

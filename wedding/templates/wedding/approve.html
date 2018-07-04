@@ -15,7 +15,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% for local in locals %}
 <div>
     <h1>{{ local.name }}'s Quotes </h1>
 </div>
@@ -30,29 +30,30 @@
         </tr>
         </thead>
         <tbody>
-        {% for quote in quotes %}
-            <tr align="center">
-              <th scope="row">{{quote.place}}</th>
-              <td>{{quote.quote}}</td>
-              <td>{% if quote.approved %} 👍 {% endif %}</td>
-            </tr>
+        {% for key,value in quotes.items %}
+        {% if key == local.name %}
+            {% for q in value %}
+                <tr align="center">
+                  <th scope="row">{{q.place}}</th>
+                  <td>{{q.quote}}</td>
+                  <td>{% if q.approved %} 👍 {% endif %}</td>
+                  <td><input type="checkbox" class="form-check-input" id="my_checkbox{{forloop.counter}" value="active "></td>
+                </tr>
+                <script>
+                $("#my_checkbox{{forloop.counter}}").change(function() {
+                    if(this.checked) {
+                        });
+                    }
+                    # If you want, make an else
+                });
+                </script>
+            {% endfor %}
+        {% endif %}
         {% endfor %}
         </tbody>
     </table>
-    <p>Editing/Deleting Coming Soon! Contact Michael or Lauren for a quick fix.</p>
 </div>
 
-
-<h3>Add Quote</h3>
-{% if form %}
-
-<form action='' method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
-{% endif%}
-
-
+{% endfor %}
 
 {% endblock %}
