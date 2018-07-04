@@ -47,7 +47,7 @@ def quote(request, number):
             post.approved = False
             post.user = Local.objects.get(name=local.name)
             post.save()
-            return HttpResponseRedirect(f"/form/{number}/")
+            return HttpResponseRedirect("/form/{}/".format(number))
     else:
         form = QuoteForm()
     return render(request, 'wedding/forms.html', {'form': form,
