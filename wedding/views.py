@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import Hotel, Fund, FunStuff, Quote, Local
+from django.contrib.auth.decorators import login_required
 from .forms import QuoteForm
 import random
 
@@ -55,7 +56,7 @@ def quote(request, number):
                                                   'number': number,
                                                   'quotes': quotes,
                                                   })
-
+@login_required
 def approve(request):
     locals = Local.objects.all()
     quotes = {}
