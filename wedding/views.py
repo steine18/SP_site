@@ -1,22 +1,20 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
-from .models import Hotel, Fund, FunStuff, Quote, Local
+from .models import Hotel, Fund, FunStuff, Quote, Local, Event
 from django.contrib.auth.decorators import login_required
 from .forms import QuoteForm
 import random
 
 
 # Create your views here.
-def home(request):
-    hotels = Hotel.objects.all()
-    funds = Fund.objects.all()
-    return render(request, 'wedding/home.html', {'hotels': hotels, 'funds': funds})
 
-def home2(request):
+def home(request):
     funds = Fund.objects.all()
     fun_stuff = FunStuff.objects.all()
+    events = Event.objects.all()
     return render(request, 'wedding/save_the_date.html', {'funds': funds,
                                                           'fun_stuff': fun_stuff,
+                                                          'events': events
                                                           })
 
 

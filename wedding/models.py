@@ -78,4 +78,16 @@ class Quote(models.Model):
         return self.place.name
 
 
+class Event(models.Model):
+    title = models.CharField(max_length=120)
+    what = models.CharField(max_length=120)
+    when = models.DateTimeField()
+    where = models.CharField(max_length=120)
+    where_link = models.CharField(max_length=120)
+    who = models.CharField(max_length=120)
+    attire = models.CharField(max_length=120)
+    transportation = models.TextField(blank=True)
+    other = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.title
