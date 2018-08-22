@@ -85,6 +85,7 @@ class Event(models.Model):
     where = models.CharField(max_length=120)
     where_link = models.CharField(max_length=120)
     who = models.CharField(max_length=120)
+    host = models.CharField(max_length=120, blank=True)
     attire = models.CharField(max_length=120)
     transportation = models.TextField(blank=True)
     other = models.TextField(blank=True)

@@ -54,12 +54,13 @@
 
             </dl>
         </div>
+        <!-- Bonus Events -->
         <div>
             <h2 class="section-heading text-center">Bonus Fun</h2>
             <hr class="primary">
             <p>We have some extras planned for friends and family traveling from out of town (sorry locals).
                 We will be hosting a Welcome BBQ at our house the night before the wedding and a Send-Off Brunch the day after.
-                Check your invitation for an RSVP! </p>
+                Check your invitation for an RSVP! We are also planning a bar crawl through Downtown Las Vegas that is open to anyone who would like to join.</p>
 
             {% for event in events %}
             <h4 class="section-heading text-left">{{ event.title}}</h4>
@@ -68,6 +69,7 @@
                 <dd><b>When:</b> {{ event.when |date:'l, F jS - g:ia' }}</dd>
                 <dd><b>Where: </b>{% if event.where_link != 'none' %} <a href={{event.where_link}}>{{ event.where }}</a>{% else %} {{ event.where }}  {% endif %}</dd>
                 <dd><b>Who: </b>{{ event.who }} </dd>
+                {% if event.host %}<dd><b>Hosted by: </b>{{event.host}}</dd>{% endif %}
                 <dd><b>Attire: </b>{{ event.attire }}</dd>
                 {% if event.transportation %}
                 <dd><b>Getting There: </b>{{ event.transportation }}</dd>

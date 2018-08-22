@@ -7,6 +7,7 @@ class QuoteAdmin(admin.ModelAdmin):
 
     list_display = ('place', 'user', 'approved')
 
+    list_editable = ['approved']
 
 # Register your models here.
 admin.site.register(Hotel)
