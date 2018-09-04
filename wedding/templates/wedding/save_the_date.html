@@ -2,28 +2,46 @@
 {% load staticfiles %}
 
 {% block navbar %}
+<div>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="#">Lauren and Michael</a>
         <a class="nav-link" href="#Event">Event</a>
         <a class="nav-link" href="#Registry">Registry</a>
         <a class="nav-link" href="/im-not-a-local">Travel</a>
         <a class="nav-link" href="#Contact">Contact</a>
-    </nav>
+</nav>
+
+
 
     <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
         <span class="anchor" id="SavetheDate"></span>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
 
 <!-- Save the Date -->
 <section id="Save the Date">
-    <div class="text-center" style="background-color:#316B52">
-        <img src="/static/images/save_the_date.jpeg" class="img-fluid" alt="Responsive image">
+    <div class="progress">
+        <div class="progress-bar-blue" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar-yellow" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="text-center" style="background-color:#ffff">
+        <img src="/static/images/invite.png" class="img-fluid" alt="Responsive image">
+    </div>
+    <div class="progress">
+        <div class="progress-bar-yellow" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar-blue" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 </section>
 
 <!-- Event info -->
+
 <section id="Event" class="bg-white">
 <div class="container">
     <div class="row">
@@ -49,11 +67,10 @@
                 <dd>Taking an Uber, Lyft, or taxi is suggested for convenience.</br>
                 There is a free valet at the Hofbrauhaus and limited parking at the Hyatt Hotel next door.</br>
                 The Hard Rock Hotel and Casino is a short walk away and has plenty of parking.</br>
-                Please note that guests must be 17 or older. </br>
                 <b>We recommend having a plan for a ride home since there is an open bar.</b></br></dd>
                 
                 <dd><a href="/im-not-a-local">Check out our recommendations for guests visiting from out of town.</a></dd>
-
+                <dd><i>Please note that guests must be 17 or older.</i></dd>
             </dl>
         </div>
         <!-- Bonus Events -->

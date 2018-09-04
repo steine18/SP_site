@@ -17,7 +17,7 @@ body {
 
 hr {
     width: 500px;
-    border-color: #306c51;
+    border-color: #ffbd4a;
     border-width: 3px;
 }
 
@@ -26,7 +26,7 @@ hr.light {
 }
 
 a {
-    color: #956725;
+    color: #008fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -34,7 +34,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #956725;
+    color: #008fff;
 }
 
 h1,
@@ -54,7 +54,7 @@ p {
 
 
 .bg-primary {
-    background-color: #306c51;
+    background-color: #005ccb;
 }
 
 .bg-primary a {
@@ -96,7 +96,7 @@ aside {
     text-transform: uppercase;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
     font-weight: 700;
-    color: #306c51;
+    color: #005ccb;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -114,12 +114,12 @@ aside {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-    color: #306c51;
+    color: #005ccb;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-    color: #306c51!important;
+    color: #005ccb!important;
     background-color: transparent;
 }
 
@@ -160,7 +160,7 @@ aside {
 
     .navbar-default.affix .navbar-header .navbar-brand {
         font-size: 14px;
-        color: #306c51;
+        color: #005ccb;
     }
 
     .navbar-default.affix .navbar-header .navbar-brand:hover,
@@ -175,7 +175,7 @@ aside {
 
     .navbar-default.affix .nav > li>a:hover,
     .navbar-default.affix .nav>li>a:focus:hover {
-        color: #306c51;
+        color: #005ccb;
     }
 }
 
@@ -315,7 +315,7 @@ header .header-content .header-content-inner p {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(149,103,37,1);
+    background: #008fff;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -364,7 +364,7 @@ header .header-content .header-content-inner p {
 }
 
 .text-primary {
-    color: #306c51;
+    color: #005ccb;
 }
 
 .no-gutter > [class*=col-] {
@@ -373,7 +373,7 @@ header .header-content .header-content-inner p {
 }
 
 .btn-default {
-    border-color: #306c51;
+    border-color: #005ccb;
     color: #222;
     background-color: #fff;
     -webkit-transition: all .35s;
@@ -426,9 +426,9 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-    border-color: #306c51;
+    border-color: #005ccb;
     color: #fff;
-    background-color: #306c51;
+    background-color: #005ccb;
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
@@ -440,9 +440,9 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
-    border-color: ##306c51;
+    border-color: #005ccb;
     color: #fff;
-    background-color: ##306c51;
+    background-color: #005ccb;
 }
 
 .btn-primary:active,
@@ -469,19 +469,19 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #306c51;
-    background-color: #306c51;
+    border-color: #005ccb;
+    background-color: #005ccb;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #956725;
-    border-color: #956725; /*set the color you want here*/
+    background-color: #ffbd4a;
+    border-color: #ffbd4a; /*set the color you want here*/
 }
 
 .btn-primary .badge {
-    color: #306c51;
-    background-color: #306c51;
+    color: #005ccb;
+    background-color: #005ccb;
 }
 
 
@@ -527,4 +527,13 @@ body {
 #footer {
     background-color: #222;
     padding-bottom: 30px;
+}
+
+.progress-bar-blue {
+      background-color: #008fff !important;
+      border-radius:0px;
+}
+.progress-bar-yellow {
+      background-color: #ffbd4a !important;
+      border-radius:0px
 }
