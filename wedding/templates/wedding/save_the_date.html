@@ -82,6 +82,7 @@
                 Check your invitation for an RSVP! We are also planning a bar crawl through Downtown Las Vegas that is open to anyone who would like to join.</p>
 
             {% for event in events %}
+            {% if event.is_upcoming %}
             <h4 class="section-heading text-left">{{ event.title}}</h4>
             <dl class="dl-row text-left lead">
                 <dd><b>What: </b>{{ event.what }}</dd>
@@ -97,6 +98,7 @@
                 <dd><b>Other Stuff: </b>{{ event.other }}</dd>
                 {% endif %}
             </dl>
+            {% endif %}
             {% endfor %}
 
 
