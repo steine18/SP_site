@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import string
 import random
+from datetime import datetime, timedelta
+from django.utils import timezone
 
 
 # Create your models here.
@@ -89,6 +91,9 @@ class Event(models.Model):
     attire = models.CharField(max_length=120)
     transportation = models.TextField(blank=True)
     other = models.TextField(blank=True)
+
+    def is_upcoming(self):
+        return  timezone.now() < (self.when + timedelta(hours=6))
 
     def __str__(self):
         return self.title
