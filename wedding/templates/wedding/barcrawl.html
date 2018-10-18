@@ -1,0 +1,67 @@
+{% extends "wedding/base.html" %}
+{% load staticfiles %}
+
+{% block navbar %}
+<div>
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#">Lauren and Michael</a>
+        <a class="nav-link" href="#Event">Event</a>
+        <a class="nav-link" href="#Registry">Registry</a>
+        <a class="nav-link" href="/im-not-a-local">Travel</a>
+        <a class="nav-link" href="#Contact">Contact</a>
+</nav>
+
+
+
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <span class="anchor" id="SavetheDate"></span>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<section id="Bar crawl info">
+    <div class="progress">
+        <div class="progress-bar-blue" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="progress">
+        <div class="progress-bar-yellow" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</section>
+
+<section id="Event" class="bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 ">
+                <h2 class="section-heading text-center">Bar Crawl Info</h2>
+                <hr class="primary">
+                <dl class="dl-row text-center lead">
+                    <dt>Meet at:</dt>
+                    <dd>Atomice Liquors</br>
+                        <a href="https://goo.gl/maps/AeCGSQ2Q4dC2">917 Fremont St, Las Vegas, NV 89101</a></br>
+                        Thursday, November 1st, 2018 at 6:00p.m.</dd>
+                    <dt>Getting There and Parking:</dt>
+                    <dd>Easy drop offs for Uber, Lyft, and Taxis.</br> There is plenty of metered street parking and paid garage parking nearby.</br>
+                    <b>Be sure to have a plan for a ride home!</b></br></dd>
+                    <dt>Schedule:</dt>
+                    <dd>We have a very loose plan for when to be at each bar. We will shoot for the times listed. The bars are very to close to one another, so if we aren't at one, try the next one.</dd>
+                    <dd>Atomic Liquor - 6:</dd>
+                    <dd>Container Park - 6:45</dd>
+                    <dd>The Griffin - 8:00</dd>
+                    <dd>Downtown Cocktail Lounge - 8:45</dd>
+                    <dd>Choose your own adventure - 9:30?</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container text-center">
+        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1xQ7-jzZy0HLdAcAdAU-jr55K-aJsa-0S" width="640" height="480"></iframe>
+    </div>
+</section>
+
+
+{% endblock %}

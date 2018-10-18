@@ -54,6 +54,9 @@ def quote(request, number):
                                                   'number': number,
                                                   'quotes': quotes,
                                                   })
+def barcrawl(request):
+    return render(request, 'wedding/barcrawl.html', {})
+
 @login_required
 def approve(request):
     locals = Local.objects.all()
