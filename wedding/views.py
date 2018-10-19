@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from .models import Hotel, Fund, FunStuff, Quote, Local, Event
 from django.contrib.auth.decorators import login_required
-from .forms import QuoteForm
+from .forms import QuoteForm, BarCrawlForm
 import random
 
 
@@ -21,7 +21,7 @@ def home(request):
 def what_to_do(request):
     hotels = Hotel.objects.all()
     fun_stuff = {}
-    categories = FunStuff.objects.order_by().values_list('category', flat=True).distinct()
+    categories = FunStuff.objects.order_by('category').values_list('category', flat=True).distinct()
     for cat in categories:
         fun_stuff[cat] = FunStuff.objects.filter(category = cat)
     quotes = {}
@@ -55,7 +55,16 @@ def quote(request, number):
                                                   'quotes': quotes,
                                                   })
 def barcrawl(request):
-    return render(request, 'wedding/barcrawl.html', {})
+    if request.method == 'POST':
+        form = BarCrawlForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.approved = False
+            post.save()
+            return HttpResponseRedirect("/bar-crawl/")
+    else:
+        form = BarCrawlForm()
+    return render(request, 'wedding/barcrawl.html', {'form': form})
 
 @login_required
 def approve(request):

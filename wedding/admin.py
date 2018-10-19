@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Hotel, Fund, FunStuff, Local, Quote, Event
+from .models import Hotel, Fund, FunStuff, Local, Quote, Event, Crawler
 
 
 class QuoteAdmin(admin.ModelAdmin):
@@ -16,4 +16,5 @@ admin.site.register(FunStuff)
 admin.site.register(Local)
 admin.site.register(Quote, QuoteAdmin)
 admin.site.register(Event)
+admin.site.register(Crawler)
 

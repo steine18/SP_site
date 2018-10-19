@@ -95,7 +95,7 @@
                 <dd><b>Getting There: </b>{{ event.transportation }}</dd>
                 {% endif %}
                 {% if event.other %}
-                <dd><b>Other Stuff: </b>{{ event.other }}</dd>
+                <dd><b>Other Stuff: </b>{{ event.other |safe }}</dd>
                 {% endif %}
             </dl>
             {% endif %}

@@ -5,8 +5,8 @@
 <div>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
         <a class="navbar-brand" href="#">Lauren and Michael</a>
-        <a class="nav-link" href="#Event">Event</a>
-        <a class="nav-link" href="#Registry">Registry</a>
+        <a class="nav-link" href="/">Event</a>
+        <a class="nav-link" href="/#Registry">Registry</a>
         <a class="nav-link" href="/im-not-a-local">Travel</a>
         <a class="nav-link" href="#Contact">Contact</a>
 </nav>
@@ -39,19 +39,28 @@
                 <hr class="primary">
                 <dl class="dl-row text-center lead">
                     <dt>Meet at:</dt>
-                    <dd>Atomice Liquors</br>
+                    <dd>Atomic Liquors</br>
                         <a href="https://goo.gl/maps/AeCGSQ2Q4dC2">917 Fremont St, Las Vegas, NV 89101</a></br>
-                        Thursday, November 1st, 2018 at 6:00p.m.</dd>
+                        Thursday, November 1st, 2018 at 6:00pm</dd>
                     <dt>Getting There and Parking:</dt>
                     <dd>Easy drop offs for Uber, Lyft, and Taxis.</br> There is plenty of metered street parking and paid garage parking nearby.</br>
                     <b>Be sure to have a plan for a ride home!</b></br></dd>
                     <dt>Schedule:</dt>
                     <dd>We have a very loose plan for when to be at each bar. We will shoot for the times listed. The bars are very to close to one another, so if we aren't at one, try the next one.</dd>
                     <dd>Atomic Liquor - 6:00</dd>
-                    <dd>Container Park - 6:45</dd>
+                    <dd>Container Park - 7:00</dd>
                     <dd>The Griffin - 8:00</dd>
-                    <dd>Downtown Cocktail Lounge - 8:45</dd>
-                    <dd>Choose your own adventure - 9:30?</dd>
+                    <dd>Downtown Cocktail Lounge - 9:00</dd>
+                    <dd>Choose your own adventure - We can pick another bar or split up. There are plenty of options nearby.</dd>
+                    <dt>Let us know you're coming!</dt>
+                    <dd>{% if form %}
+                        <form class='form' action='' method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Submit" />
+                        </form>
+                        {% endif%}
+                    </dd>
                 </dl>
             </div>
         </div>

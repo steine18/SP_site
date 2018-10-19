@@ -18,3 +18,11 @@ class EditQuoteForm(forms.ModelForm):
             'quote',
             'approved',
         ]
+
+class BarCrawlForm(forms.ModelForm):
+    class Meta:
+        model = models.Crawler
+        fields = [
+            'name',
+            'count',
+        ]

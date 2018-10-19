@@ -97,3 +97,11 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Crawler(models.Model):
+    name = models.CharField(max_length=120)
+    count = models.IntegerField(default=1)
+
+    def __str__(self):
+        return '{} - {}'.format(self.name, self.count)
